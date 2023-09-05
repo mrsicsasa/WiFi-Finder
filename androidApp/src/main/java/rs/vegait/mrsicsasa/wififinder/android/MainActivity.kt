@@ -1,6 +1,11 @@
 package rs.vegait.mrsicsasa.wififinder.android
 
 import App
+import WifiFinder
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.net.wifi.WifiManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,7 +24,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                   App()
+                    val wifiFinder=WifiFinder(this)
+                   App(wifiFinder)
                 }
             }
         }
